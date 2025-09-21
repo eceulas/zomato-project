@@ -1,0 +1,637 @@
+
+/* google fonts . projede kullanacağımız font un get embed kısmında @import ile başlayan yer alınır ve en başa tanımlanır ki
+font family çağırıldığında tanımlanmış kısımdan istediğimiz font stilini sağlayabilsin*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* css reset */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+/* Tüm projenin font stilini değiştirmek için body'nin içine seçtiğimiz font family codunu yazmamız gerekiyor */
+body{
+     font-family: "Open Sans", sans-serif;
+}
+/* Header */
+.header {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+}
+a {
+    text-decoration: none;
+}
+input{
+    border:none;
+    outline:none;
+    /* outline bir inputa tıklandığında içinde bir belirtecin oluşmasını sağlar. bunun oluşmasını istemiyorsak değerine none vermeliyiz.*/
+}
+.container {
+    width: 1100px;
+   margin: auto;
+   padding: 20px;
+
+}
+
+
+.header .nav {
+    width: 80%;
+    color: white;
+    margin: auto;
+    /* margin auto ilgili elemanların soldan ve sağdan eşit boşlukla yerleştirilmesi */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding yukardan aşağıdan ve sağdan soldan olarak 2 değer alabilir */
+    padding: 17px 0;
+}
+.header .nav .user-icon{
+    /* border sırayla 3 değer alır kalınlık tip ve renk  */
+    border:1px solid rgb(207,207,207);
+    color: #ef4f5f;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: none;
+    /* display değeri none olan içerik ekranda görünmez. bunu bu projede sayfanın belli bir boyutundan sonra
+    profile iconunu görünür kılmak için kullandık */
+    justify-content: center;
+    /* justify content değeri: istediğimiz şeyin yatay noktada nerede olacağını belirler */
+    align-items: center;
+    /* align items değeri ele aldığımız şeyin dikey noktada nerede olacağını belirler */
+
+}
+.header .nav .nav-item{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+
+}
+.header .nav .nav-item a{
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+.header .right {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+}
+.header .right .nav-item a{
+    font-size: 18px;
+    padding: 8px;
+
+}
+
+/* Top */
+.top{
+    position: relative;
+    height: calc(100vh - 300px);
+}
+
+.main .bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height:calc(100vh- 300px);
+    z-index: -1;
+    max-height: 570px;
+     min-width: 420px;
+    object-fit: cover;
+    /* object-fit değeri ekrandaki resmin ekrana nasıl yerleşeceğini belirler
+    cover değeri resmin kaplayacağı alanın tamamını kaplamasını sağlıyor
+    contain resmin kapsayıcısının içinde resmin tamamamının gösterilmesini sağlıyor*/
+    border:3px solid red ;
+    height: 570px;
+    
+
+
+
+}
+.main .center-content {
+  position: absolute;
+  left: 50%;
+  bottom: calc(50% - 111px);
+  transform: translateX(-50%);
+  /* transform öteleme işlemleri için kullanılır. */
+  display: flex;
+  flex-direction: column;
+  /* istediğimiz elemanın dikey doğrultuda hizalanmasını istersek flex-direction: column kullanılır.
+  yatay doğrultuda hizalamak için flex-direction:row kullanılır. belirtmediğimiz sürece default değer flex direction: row olarak algılanır. */
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  gap: 30px;
+  text-align: center;
+  /* içerisindeki elemanları merkeze hizalar */
+  width: 100%;
+
+}
+
+.main .center-content #logo {
+  width: 300px;
+  height: 60px;
+  position: relative;
+}
+.main .center-content h2 {
+  font-size: 36px;
+  color: white;
+  font-weight: 200;
+}
+.main .center-content h2 span {
+  font-weight: 500;
+}
+
+
+.main .center-content img{
+    position: relative;
+    width: 350px;
+    height: 85px;
+}
+.main .center-content h2{
+    color:white;
+    margin: top 30px;
+    font-size: 36px;
+    font: weight 400px;
+
+}
+.main .center-content .search-container i {
+    color: rgb(255, 126, 139);
+    margin: 0 10px;
+
+
+}
+
+.main .center-content .search-container{
+    display: flex;
+    gap: 10px;
+    height: 54px;
+    border: 1px solid rgb(232,232,232);
+    background-color: white;
+    border-radius: 8px;
+    align-items: center;
+    flex: 1 1 auto;
+}
+.main .center-content .search-container .line {
+    height: 20px;
+    border: 1px solid rgb(207, 207, 207);
+}
+
+/* .main .center-content .search-container .locations,
+.main .center-content .search-container .search {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    width: 240px;
+    justify-content: space-around;
+    gap: 5px;
+    border-radius: 8px;
+    background-color: white;
+
+
+} */
+.main .center-content .search-container .locations{
+    width: 240px;
+    padding: 0 10px;
+    display:flex;
+    align-items: center;
+    border-radius: 8px;
+    height: 100%;
+   
+    
+}
+.main .center-content .search-container .search{
+    color: black;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    width: 530px;
+    
+
+
+
+}
+
+.main .center-content .search-container .location-input {
+    flex: 1;
+/* flex:1 değeri ile search kısmı bulunduğu alanın tamamını kapladı.
+flexbox kapsayıcısı içinde yer alan elemanların oranlamasını sağlar */
+}
+
+
+/* Options */
+
+.options {
+    display: flex;
+   gap: 10px;
+   width: 100%;
+   padding-top: 400px;
+   flex-wrap: wrap;
+   
+
+
+}
+
+.options .option-card {
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      flex: 1 1 auto;
+      /* flex 1 1 auto: grow-shrink ve basis özelliklerine verilen nitelikler
+      auto değeri ise contente göre image in oranlanmasını sağlar
+    */
+    cursor: pointer;
+
+}
+.options .option-card img{
+    width: 100%;
+    height: 240px;
+    border-radius: 12px;
+    overflow: hidden;
+    /* overflow hidden değeri ile taşan içeriğin gizlenmesi sağlanır */
+}
+.options .option-card .info {
+    padding: 10px 20px 16px;
+}
+.options .option-card .info .info-title {
+    font-size: 25px;
+    line-height: 32px;
+    /* line- height satır yüksekliği demek */
+
+
+}
+.options .option-card .info .info-description {
+    color: rgb(97, 97, 97);
+    font-size: 15px;
+}
+
+/* Collections */
+.collection-heading{
+    margin: 20px 0;
+}
+.collection-heading .collection-title {
+    font-size: 36px;
+    font-weight: 600;
+
+}
+ .collection-heading .subtitle-wrapper {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.collection-heading .subtitle-wrapper .collection-subtitle{
+    font-size: 18px;
+    font-weight: 200;
+}
+.collection-heading .subtitle-wrapper .see-more {
+    color: #ef4f5f;
+    font-size: 16px;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+.collections .collection-list{
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+   
+    
+}
+.collections .collection-list .collection-card{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #727272;
+    width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+
+    
+
+}
+.collection-list .collection-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ilgili image in arka planı tamamen kaplamasını sağlar
+    
+    object-fit contain : ilgili resmin boyutunun resmin bozulmayacak şekilde ayarlanmasını sağlar*/
+    border-radius: 12px;
+    height: 200px;
+   
+}
+.collection-list .collection-card .info{
+    padding: 10px;
+    
+    
+}
+.collection-list .collection-card .info .title{
+    white-space: nowrap;
+    /* info içerisindeki title kısmının sığmayan bölümünün gözükmemesini sağladı */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* text overflow elipsis yazının taşan kısmını 3 nokta olarak göstermeyi sağlar */
+    font-size: 18px;
+    color: white;
+    line-height: 24px;
+
+}
+.collection-list .collection-card .info .place-count {
+    font-size: 15px;
+    color: white;
+    margin-bottom: 10px;
+    
+}
+/*  Locations  */
+.popular-locations .popular-title {
+    font-size: 36px;
+    font-weight: 300;
+    margin: 20px 0 ;
+    white-space: nowrap;
+}
+.popular-locations .popular-title span{
+    font-weight: 500;
+}
+.popular-locations .locations {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.popular-locations .locations .location-card{
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* kapsam içindeki elemanların birini en sağa birini en sola yaslar */
+    gap: 10px;
+    border: 1px solid rgb(232, 232, 232);
+    border-radius: 8px;
+    width: 30%;
+}
+.popular-locations .locations .location-card .location-info .location-title{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 5px 0;
+    
+}
+.last-card {
+    justify-content: center !important;
+    height: 82px;
+}
+.last-card .center-text{
+    font-weight: 600;
+}
+
+/* * App Section */
+.app-section {
+  background-color: rgb(255, 251, 247);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.container .app-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  
+}
+.app-section .phone-image {
+  width: 200px;
+  height: 300px;
+}
+.app-section .phone-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.app-section .app-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.app-section .app-info .info-title {
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 65px;
+}
+.app-section .app-info .info-description {
+  font-size: 16px;
+  line-height: 32px;
+  color: rgb(54, 54, 54);
+}
+.app-section .app-info .options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 45%;
+  gap: 40px;
+}
+.app-section .app-info .options .option-item label {
+  font-weight: 500;
+}
+.app-section .app-info .options input {
+  accent-color: rgb(239, 79, 95);
+}
+.app-section .app-info form {
+  display: flex;
+  gap: 10px;
+}
+.app-section .app-info form input {
+  padding: 13px 12px;
+  width: 100%;
+  border: 1px solid rgb(207, 207, 207);
+  font-size: 18px;
+  border-radius: 6px;
+}
+.app-section .app-info form button {
+  background-color: rgb(239, 79, 95);
+  border: none;
+  white-space: nowrap;
+  padding: 0 16px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.app-section .app-info form button:hover {
+  background-color: rgb(242, 60, 78);
+}
+.app-section .app-info .store {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.app-section .app-info .store .caption {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(156, 156, 156);
+}
+.app-section .app-info .store .logos img {
+  width: 137px;
+  height: 40px;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+/* * Explore Section */
+.explore-section {
+  padding: 50px 30px;
+  margin-top: 200px;
+}
+.explore-section .title {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 20px 0;
+}
+.explore-section .explore-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.explore-section .explore-container .explore-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(232, 232, 232);
+  padding: 20px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.explore-section .explore-container .explore-item .text {
+  font-size: 20px;
+  font-weight: 400;
+}
+.footer-bottom .copyright{
+  margin-top: 200px;
+}
+.hr{
+  margin-top: 200px;
+}
+/* * Footer */
+.footer {
+  background-color: rgb(248, 248, 248);
+  padding: 20px;
+}
+
+.footer .footer-top .logo {
+  width: 132px;
+  height: 28px;
+  margin: 20px 0;
+}
+
+.footer .footer-top .footer-top-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.footer .footer-top .footer-top-wrapper .item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgb(181, 181, 181);
+  padding: 8px 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.footer .footer-top .footer-top-wrapper .item img {
+  height: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+
+.footer hr {
+  border: 1px solid rgb(207, 207, 207);
+  margin: 15px 0;
+}
+.footer .footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 13px;
+}
+/* * Responsive Tasarım */
+
+@media (max-width: 1000px) {
+  .collection-heading .subtitle-wrapper .see-more {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  /* Header */
+  .nav {
+    justify-content: end !important;
+  }
+  .nav .left,
+  .nav .right {
+    display: none;
+  }
+
+  .nav .user-icon {
+    display: flex !important;
+  }
+  /* Top */
+
+  .main .center-content .search-container {
+    flex-direction: column;
+    width: calc(100% - 50px);
+    height: fit-content;
+
+    /* Elemanın yüksekliğini content'ine göre ayarla */
+  }
+  .main .center-content .search-container .line {
+    display: none;
+  }
+
+  .main .center-content .search-container .location,
+  .main .center-content .search-container .search {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Collections */
+  .collections .collection-list {
+    flex-direction: column;
+  }
+  .collections .collection-list .collection-card {
+    width: 100%;
+  }
+  .collection-list .collection-card img {
+    height: 200px;
+  }
+  /* Popular Locations */
+  .popular-locations .locations {
+    flex-direction: column;
+  }
+  .popular-locations .locations .location-card {
+    width: 100%;
+  }
+
+  /* App Section */
+  .app-section {
+    margin: 20px;
+  }
+  .app-section .phone-image {
+    display: none !important;
+  }
+}
